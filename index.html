@@ -8,34 +8,102 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .small-modal {
+        width: 300px;
+        top: 10%;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col s12 m6 l3 ">
-          <div class="card grey lighten-2">
+        <div class="col s12 m6 l4">
+          <div class="card z-depth-3 grey lighten-4">
             <div class="card-image">
               <img class="responsive-img" src="/s24.webp" alt="Producto" />
             </div>
-            <div style=""  class="card-title grey lighten-3 center-align">
-              <span style="" class="">Samsung S24</span>
+            <div class="card-title center-align">
+              <div class="row">
+                <span class="col s12 ubuntu-bold">Samsung S24</span>
+                <span class="row ubuntu-light">128GB</span>
+                <a href="#" class="btn grey darken-3 waves-effect waves-light">Ver Más</a>
+              </div>
             </div>
-
-            <div class="card-content grey lighten-3">
-              <p>
-                El mejor telefono premium de la actualidad listo para ser el
+            <div class="card-content">
+              <p class="ubuntu-light-italic">
+                El mejor teléfono premium de la actualidad listo para ser el
                 mejor en redes sociales y juegos.
               </p>
             </div>
-            <div class="card-action grey lighten-3">
-              <a href="#">Agregar al Carrito</a>
-              <a href="#">Ver Más</a>
+            <div class="card-action grey lighten-3 center-align">
+              <a href="#" id="add-to-cart-btn" class="btn-floating btn-large waves-effect">
+                <i class="material-icons left grey darken-4">add_shopping_cart</i>Agregar al Carrito
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="card z-depth-3 grey lighten-4">
+            <div class="card-image">
+              <img class="responsive-img" src="/s24.webp" alt="Producto" />
+            </div>
+            <div class="card-title center-align">
+              <div class="row">
+                <span class="col s12 ubuntu-bold">Samsung S24</span>
+                <span class="row ubuntu-light">128GB</span>
+                <a href="#" class="btn grey darken-3 waves-effect waves-light">Ver Más</a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p class="ubuntu-light-italic">
+                El mejor teléfono premium de la actualidad listo para ser el
+                mejor en redes sociales y juegos.
+              </p>
+            </div>
+            <div class="card-action grey lighten-3 center-align">
+              <a href="#" id="add-to-cart-btn-2" class="btn-floating btn-large waves-effect">
+                <i class="material-icons left grey darken-4">add_shopping_cart</i>Agregar al Carrito
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <div id="modal1" class="modal small-modal">
+      <div class="modal-content center-align">
+        <p>¡Producto agregado al carrito!</p>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+      });
+
+      document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+        var instance = M.Modal.getInstance(document.getElementById('modal1'));
+        instance.open();
+      });
+
+      document.getElementById('add-to-cart-btn-2').addEventListener('click', function() {
+        var instance = M.Modal.getInstance(document.getElementById('modal1'));
+        instance.open();
+      });
+    </script>
   </body>
 </html>
